@@ -3,8 +3,13 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
-				<u-rate :count="count" v-model="value"></u-rate>
+			
 		</view>
+		<u--input
+			    placeholder="后置图标"
+			    suffixIcon="map-fill"
+			    suffixIconStyle="color: #909399"
+			></u--input>
 	</view>
 </template>
 
@@ -12,9 +17,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello',
-				count: 4,
-				value: 2
+				title: 'Hello'
 			}
 		},
 		onLoad() {
@@ -26,7 +29,9 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
+		@import "@/uni_modules/uview-ui/index.scss";
 	.content {
 		display: flex;
 		flex-direction: column;
